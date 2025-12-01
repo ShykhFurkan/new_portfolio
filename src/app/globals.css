@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Palette */
+  --background: #F5F5F0; /* Sand Beige */
+  --foreground: #2C2420; /* Charcoal */
+  
+  --primary: #8D6E63; /* Clay Brown */
+  --primary-foreground: #F5F5F0;
+  
+  --secondary: #818C74; /* Olive */
+  --secondary-foreground: #F5F5F0;
+  
+  --accent: #E07A5F; /* Dusty Orange */
+  --accent-foreground: #F5F5F0;
+  
+  --muted: #EBEBE6;
+  --muted-foreground: #5D5550;
+  
+  --card: rgba(255, 255, 255, 0.4);
+  --card-foreground: #2C2420;
+  
+  --border: rgba(141, 110, 99, 0.2);
+  --input: rgba(141, 110, 99, 0.2);
+  --ring: #8D6E63;
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Dark Mode Palette */
+  --background: #1A1818; /* Darker Charcoal */
+  --foreground: #F5F5F0; /* Sand Beige */
+  
+  --primary: #A1887F; /* Lighter Clay */
+  --primary-foreground: #1A1818;
+  
+  --secondary: #9CA98B; /* Lighter Olive */
+  --secondary-foreground: #1A1818;
+  
+  --accent: #E07A5F; /* Dusty Orange */
+  --accent-foreground: #F5F5F0;
+  
+  --muted: #2C2420;
+  --muted-foreground: #A8A29E;
+  
+  --card: rgba(44, 36, 32, 0.4);
+  --card-foreground: #F5F5F0;
+  
+  --border: rgba(245, 245, 240, 0.1);
+  --input: rgba(245, 245, 240, 0.1);
+  --ring: #A1887F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
