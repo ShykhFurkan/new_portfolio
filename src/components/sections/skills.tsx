@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 
 const skills = [
     { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js"] },
-    { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "Prisma", "Supabase", "Firebase"] },
-    { category: "Tools", items: ["Git", "Docker", "Figma", "VS Code", "Vercel"] },
+    { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "Prisma", "Supabase", "GraphQL"] },
+    { category: "AI / ML", items: ["Python", "TensorFlow", "PyTorch", "OpenAI", "LangChain", "Hugging Face"] },
+    { category: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"] },
+    { category: "Tools", items: ["Git", "VS Code", "Postman", "Figma"] },
 ];
 
 export function Skills() {
